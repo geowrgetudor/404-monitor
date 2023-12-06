@@ -19,6 +19,8 @@ class NotFoundMonitorServiceProvider extends PackageServiceProvider
 
     public function boot(): void
     {
+        parent::boot();
+
         $this->loadViewsFrom(__DIR__ . '/../resources/views', '404-monitor');
 
         $this->callAfterResolving('livewire', function (LivewireManager $livewire, Application $app) {

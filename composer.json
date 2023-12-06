@@ -31,8 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Geow\\NotFoundMonitor\\": "src/",
-            "Geow\\NotFoundMonitor\\Database\\Factories\\": "database/factories/"
+            "Geow\\NotFoundMonitor\\": "src/"
         }
     },
     "autoload-dev": {
