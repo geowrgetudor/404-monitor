@@ -48,6 +48,6 @@ class NotFoundRecorder
             type: 'page_not_found',
             key: json_encode([$request->method(), $request->getUri()], flags: JSON_THROW_ON_ERROR),
             timestamp: $startedAt,
-        )->max()->count();
+        )->count();
     }
 }
