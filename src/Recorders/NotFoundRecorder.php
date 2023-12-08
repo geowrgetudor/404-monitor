@@ -21,8 +21,6 @@ class NotFoundRecorder
     use Concerns\Thresholds;
     use ConfiguresAfterResolving;
 
-    public string $listen = SharedBeat::class;
-
     public function __construct(
         protected Pulse $pulse,
         protected Repository $config
