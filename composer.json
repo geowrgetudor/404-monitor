@@ -69,10 +69,7 @@
         "laravel": {
             "providers": [
                 "Geow\\NotFoundMonitor\\NotFoundMonitorServiceProvider"
-            ],
-            "aliases": {
-                "NotFoundMonitor": "Geow\\NotFoundMonitor\\Facades\\NotFoundMonitor"
-            }
+            ]
         }
     },
     "minimum-stability": "beta",

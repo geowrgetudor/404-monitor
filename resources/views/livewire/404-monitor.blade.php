@@ -6,7 +6,7 @@
     </x-pulse::card-header>
 
     <x-pulse::scroll :expand="$expand" wire:poll.5s="">
-        @if (empty($notFoundPages))
+        @if ($notFoundPages->isEmpty())
             <x-pulse::no-results />
         @else
             <x-pulse::table>
@@ -33,7 +33,7 @@
                                 </code>
                             </x-pulse::td>
                             <x-pulse::td numeric class="text-gray-700 dark:text-gray-300 font-bold">
-                                {{ $page->method }}
+                                <x-pulse::http-method-badge :method="$page->method" />
                             </x-pulse::td>
                             <x-pulse::td numeric class="text-gray-700 dark:text-gray-300 font-bold">
                                 {{ (int) $page->count }}

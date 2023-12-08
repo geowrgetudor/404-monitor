@@ -7,7 +7,6 @@ use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use Laravel\Pulse\Events\SharedBeat;
 use Laravel\Pulse\Pulse;
 use Laravel\Pulse\Concerns\ConfiguresAfterResolving;
 use Laravel\Pulse\Recorders\Concerns;
@@ -42,9 +41,13 @@ class NotFoundRecorder
             return;
         }
 
+        if ($this->shouldIgnore($request->fullUrl())) {
+            return;
+        }
+
         $this->pulse->record(
             type: 'page_not_found',
-            key: json_encode([$request->method(), $request->getUri()], flags: JSON_THROW_ON_ERROR),
+            key: json_encode([$request->method(), $request->fullUrl()], flags: JSON_THROW_ON_ERROR),
             timestamp: $startedAt,
         )->count();
     }
