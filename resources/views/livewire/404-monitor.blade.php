@@ -1,5 +1,5 @@
 <x-pulse::card :cols="$cols" :rows="$rows" :class="$class">
-    <x-pulse::card-header name="{{ __('404 Monitor') }}">
+    <x-pulse::card-header name="{{ __('404 Monitor') }}" details="past {{ $this->periodForHumans() }}">
         <x-slot:icon>
             <x-dynamic-component :component="'pulse::icons.sparkles'" />
         </x-slot:icon>
